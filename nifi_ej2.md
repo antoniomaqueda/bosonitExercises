@@ -3,6 +3,8 @@
 ## Enunciado
 Queremos serializar un CSV con Avro y enviarlo a un topic de Kafka, todo ello con NIFI
 
+![Ruta](imagenes/ej1.JPG)
+
 ## Pasos
 
 ### 1. Importar el CSV -> GetFile
@@ -35,12 +37,17 @@ Queremos serializar un CSV con Avro y enviarlo a un topic de Kafka, todo ello co
 
 ![Processor Properties](imagenes/publishKafkaRecordProp.JPG)
 
+- Indicar el topic al que enviaremos los datos, además de la locaclización de los brokers
 
 
 - Debemos añadir controller services en Record reader (CSVReader1) y Record Writer (AvroRecordSetWriter), y los activamos:
 
 ![Processor Properties](imagenes/csvReader.JPG)
 
+- Indicar el uso de "header" y el ";" como separador
+
 ![Processor Properties](imagenes/AvroRecordSetWriter.JPG)
+
+- Usar el shcema.name especificado anteriormente
 
   
