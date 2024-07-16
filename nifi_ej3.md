@@ -1,17 +1,23 @@
-# Parte de NIFI en Ejercicio2
+# Parte de NIFI en Ejercicio3
 
 ## Enunciado
-Queremos serializar un CSV con Avro y enviarlo a un topic de Kafka, todo ello con NIFI
+Queremos leer un topic de Kafka, deserializarlo de Avro y convertirlo a JSON, todo ello con NIFI
 
-![Ruta](imagenes/ej1.JPG)
+![Ruta](imagenes/ej3.JPG)
 
 ## Pasos
 
-### 1. Importar el CSV -> GetFile
+### 1. COnsumir un topic de Kafka y transformarlo a JSON
 
-![Processor](imagenes/getFile.JPG)
+![Processor](imagenes/consumeKafka.JPG)
 
-![Processor Properties](imagenes/getFileProp.JPG)
+- Indicar el topic al que enviaremos los datos, además de la localización de los brokers
+
+![Processor Properties](imagenes/consumeKafkaProp1.JPG)
+![Processor Properties](imagenes/consumeKafkaProp2.JPG)
+
+- Debemos añadir controller services en Record reader (AvroReader) y Record Writer (AvroRecordSetWriter), y los activamos:
+
 
 - Indicamos la carpeta dónde se encuentra el CSV
 
