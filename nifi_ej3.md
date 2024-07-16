@@ -7,7 +7,7 @@ Queremos leer un topic de Kafka, deserializarlo de Avro y convertirlo a JSON, to
 
 ## Pasos
 
-### 1. COnsumir un topic de Kafka y transformarlo a JSON
+### 1. Consumir un topic de Kafka y transformarlo a JSON
 
 ![Processor](imagenes/consumeKafka.JPG)
 
@@ -16,44 +16,22 @@ Queremos leer un topic de Kafka, deserializarlo de Avro y convertirlo a JSON, to
 ![Processor Properties](imagenes/consumeKafkaProp1.JPG)
 ![Processor Properties](imagenes/consumeKafkaProp2.JPG)
 
-- Debemos añadir controller services en Record reader (AvroReader) y Record Writer (AvroRecordSetWriter), y los activamos:
+- Debemos añadir controller services en Record reader (AvroReader) y Record Writer (jsonRecordSetWriter), y los activamos:
 
+![Processor Properties](imagenes/avroReaderr.JPG)
 
-- Indicamos la carpeta dónde se encuentra el CSV
+- Usamos el schema.name y el esquema que encontramos en el código
 
-
-
-
-### 2. Añadir extensión .avro -> UpdateAttribute
-
-![Processor](imagenes/updateAttribute.JPG)
-
-![Processor Properties](imagenes/updateAttributeProp.JPG)
-
-- Añadimos property "Filename" para cambiar el nombre: fichero.csv -> fichero.avro
-  
-- Añadimos property "schema.name" para incluir el esquema AVRO que se encuentra en el codigo
+![Processor Properties](imagenes/jsonRecordSetWriter.JPG)
 
 
 
 
-### 3. Enviar a un topic de Kafka -> PublishKafkaRecord
+### 2. Colocamos el JSON en un directorio -> PutFile
 
-![Processor](imagenes/publishKafkaRecord.JPG)
-
-![Processor Properties](imagenes/publishKafkaRecordProp.JPG)
-
-- Indicar el topic al que enviaremos los datos, además de la locaclización de los brokers
+![Processor](imagenes/putFileProp.JPG)
 
 
-- Debemos añadir controller services en Record reader (CSVReader1) y Record Writer (AvroRecordSetWriter), y los activamos:
 
-![Processor Properties](imagenes/csvReader.JPG)
-
-- Indicar el uso de "header" y el ";" como separador
-
-![Processor Properties](imagenes/AvroRecordSetWriter.JPG)
-
-- Usar el shcema.name especificado anteriormente
 
   
