@@ -30,3 +30,14 @@ En este ejercicio se usarán Kafka, Spark, NIFI, CSV, JSON y Avro
 
 
 ### Lo referente a la configuración de NIFI se encuentra en el fichero "nifi.md"
+
+
+
+## Ejercicio 4
+
+En este ejercicio se usarán Kafka, Trino, CSV y JSON
+
+- Se integrarán Kafka y Trino para hacer consultas SELECT desde Trino de mensajes en diferentes formatos
+
+- Se introducirán mensajes tanto en CSV como JSON en KAfka e indicaremos a Trino como leerlos
+
